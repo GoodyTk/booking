@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="button-container">
+        <div class="button-box">
+            <h1 class="welcome-header"><span>Welcome!</span></h1>
+            <a href="{% url 'register' %}">
+                <center><button type="button" class="button">Registration</button></center>
+            </a>
+            <a href="{% url 'login' %}">
+                <center><button type="button" class="button">Authorization</button></center>
+            </a>
+            <a href="{% url 'room-list' %}">
+                <center><button type="button" class="button">List of rooms</button></center>
+            </a>
+            <a href="{% url 'book-room' %}">
+                <center><button type="button" class="button">Rent a room</button></center>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .booking-container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .booking-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 28px;
+            color: #1976d2;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        p {
+            font-size: 18px;
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #424242;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #1976d2;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #1565c0;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h1>Booking #{{ booking.id }}</h1>
+        <p>User: <span class="highlight">{{ booking.user.username }}</span></p>
+        <p>Room: <span class="highlight">{{ booking.room }}</span></p>
+        <p>Time range: <span class="highlight">{{ booking.start_time }} - {{ booking.end_time }}</span></p>
+        <a href="{% url 'home-page' %}">
+            <center><button type="button" class="button">Home page</button></center>
+        </a>
+    </div>
+</body>
+</html>
